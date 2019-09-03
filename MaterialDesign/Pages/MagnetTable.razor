@@ -1,0 +1,36 @@
+﻿@page "/magnettable"
+
+@using MaterialDesign.Data
+
+
+<h1>Tadaa Tie Dye State Magnets</h1>
+
+<p>This component demonstrates fetching data through an API.</p>
+
+<MatTable Items="@magnets"
+          FilterByColumnName="ProdName"
+          SearchTermFieldLabel="State Name"
+          SearchTermFieldPlaceHolder=""
+          SearchTermParamName="State"
+          RequestApiOnlyOnce="true"
+          ApiUrl="http://api.tadaatiedye.com/api/magnets"
+          AllowSelection="true">
+    <MatTableHeader>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Picture</th>
+        <th>Qty on hand</th>
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.ProdId</td>
+        <td>@context.ProdName</td>
+        <td>@context.ProdPrice</td>
+        <td>@context.ProdQty</td>
+        <td><img src="http://tadaatiedye.com@(context.ProdPicture)" height="30" width="30" /></td>
+    </MatTableRow>
+</MatTable>
+
+@code {
+Magnets[] magnets;
+}

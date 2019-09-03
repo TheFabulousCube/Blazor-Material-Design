@@ -1,0 +1,21 @@
+﻿@page "/"
+@using MaterialDesign.Data
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<MatButton Outlined="true" Class="btn btn-primary" @onclick="ClearCounter">Clear Counter</MatButton>
+<p>Global count: @WeatherForecast.GlobalCount</p>
+@*<user-poll></user-poll>*@
+
+@code
+{
+                    [Inject]
+                protected IMatToaster Toaster { get; set; }
+    void ClearCounter()
+    {
+        WeatherForecast.GlobalCount = 0;
+        Toaster.Add("You just cleared the counter.", MatToastType.Success, "Congratulations!", "add", null);
+    }
+}
