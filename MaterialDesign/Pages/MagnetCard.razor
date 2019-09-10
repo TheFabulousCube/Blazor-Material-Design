@@ -1,0 +1,35 @@
+﻿@page "/MagnetCard"
+
+@using MaterialDesign.Data
+<h3>Here are the cards:</h3>
+<div class="flexcontainer">
+
+    @if (magList != null)
+    {
+        <p>There are @magList.Count() magnets</p>
+    @foreach (var item in magList)
+    {
+        //using (Html.BeginForm("AddToCart", "Cart", new { id = item.ProdId }, FormMethod.Post))
+        //{
+            <ul class="flexsingle">
+                <li>@item.ProdName</li>
+                <li>@item.ProdId</li>
+                <li><img src="@item.ProdPicture" alt="@item.ProdName" style="max-width: 75px; height: auto;" /></li>
+
+                <li>@item.ProdPrice</li>
+                <li>#Avail: @item.ProdQty</li>
+                <li><input type="submit" value="Add to cart" /></li>
+                @*@Html.ActionLink("Details", "Details", new { id = item.ProdId })*@
+            </ul>
+        @*}*@
+    }
+    }
+
+</div>
+
+@code {
+    [Parameter]
+    public Magnets[] magList { get; set; }
+}
+
+

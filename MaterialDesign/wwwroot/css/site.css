@@ -8,6 +8,33 @@ a, .btn-link {
     color: #0366d6;
 }
 
+.flexcontainer {
+    /* The main display uses css3 flexible box to align the boxes */
+    /* Safari */
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    background-color: rgba(50,100,30,0);
+}
+
+ul.flexcontainer {
+}
+
+.flexsingle {
+    /* this controls the behavior of each individual box */
+    background-color: cornflowerblue;
+    list-style-type: none;
+    border: 3px solid;
+    border-radius: 10% 10% 10% 10%;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .btn-primary {
     color: #fff;

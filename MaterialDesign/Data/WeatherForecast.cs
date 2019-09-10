@@ -5,6 +5,7 @@ namespace MaterialDesign.Data
     public class WeatherForecast
     {
         public static int GlobalCount {get;set;}
+        public static AngularData Data { get; set; }
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }

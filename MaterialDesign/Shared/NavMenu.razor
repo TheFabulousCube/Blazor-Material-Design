@@ -1,47 +1,10 @@
-﻿@*<div class="top-row pl-4 navbar navbar-dark">
-        <a class="navbar-brand" href="">Material Design</a>
-        <button class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-
-    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-        <ul class="nav flex-column">
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="oi oi-home" aria-hidden="true"></span> Home
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="fetchdata">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-                </NavLink>
-            </li>
-        </ul>
-    </div>
-
-    @code {
-        bool collapseNavMenu = true;
-
-        string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-        void ToggleNavMenu()
-        {
-            collapseNavMenu = !collapseNavMenu;
-        }
-    }*@
-
+﻿
     <MatNavMenu>
         <MatNavMenu Class="top-row pl-4 navbar navbar-dark">
-        <a class="navbar-brand" href="">Material Design</a>
-        <button class="navbar-toggler" >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <a class="navbar-brand" href="">Material Design</a>
+            <button class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </MatNavMenu>
         <MatNavItem>
             <NavLink class="nav-link text-white" href="" Match="NavLinkMatch.All">
@@ -53,8 +16,8 @@
                 <MatNavItem AllowSelection="false"><MatIcon Icon="add"></MatIcon>&nbsp; Counter</MatNavItem>
             </MatNavSubMenuHeader>
             <MatNavSubMenuList>
-                <MatNavItem Href="counter" Class="nav-link text-white" >Blazor Counter&nbsp; <MatIcon Icon="add_box"></MatIcon></MatNavItem>
-                <MatNavItem Class="nav-link text-white" Href="counter">Angular Counter&nbsp; <MatIcon Icon="add_box"></MatIcon></MatNavItem>
+                <MatNavItem Href="counter" Class="nav-link text-white"><MatIcon Icon="add_box"></MatIcon>Blazor Counter </MatNavItem>
+                <MatNavItem Class="nav-link text-white bg-danger" Href="angular"><MatIcon Icon="add_box"></MatIcon>Angular Counter&nbsp; </MatNavItem>
             </MatNavSubMenuList>
         </MatNavSubMenu>
         <MatNavItem>
@@ -65,6 +28,11 @@
         <MatNavItem>
             <NavLink class="nav-link text-white" href="fetchdata">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </MatNavItem>
+        <MatNavItem>
+            <NavLink class="nav-link text-white bg-danger" href="JSInterop"><MatIcon Icon="list_alt"></MatIcon>
+                 JavaScript Form
             </NavLink>
         </MatNavItem>
     </MatNavMenu>
