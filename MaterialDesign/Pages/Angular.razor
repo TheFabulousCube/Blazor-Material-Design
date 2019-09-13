@@ -4,16 +4,10 @@
 
 <h1>Angular Counter</h1>
 <p>Here's the Weather counter:</p>
-<angular-counter data="@WeatherForecast.GlobalCount"></angular-counter>
+<angular-counter data="@GlobalData.GlobalCount"></angular-counter>
 
 @code {
-    AngularData data = new AngularData(4);
 
-    [JSInvokable]
-    public void incrementGlobal()
-    {
-        data.counter++;
-    }
 }
 
 

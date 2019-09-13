@@ -8,6 +8,18 @@ a, .btn-link {
     color: #0366d6;
 }
 
+.jssection {
+    border-style: solid;
+    border-color: red;
+    border-radius: 5px;
+}
+
+.blsection {
+    border-style: solid;
+    border-color: rebeccapurple;
+    border-radius: 5px;
+}
+
 .flexcontainer {
     /* The main display uses css3 flexible box to align the boxes */
     /* Safari */

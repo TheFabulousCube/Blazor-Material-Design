@@ -10,19 +10,20 @@
     Trigger JavaScript Prompt
 </button>
 
-<h3 id="welcome" style="color:green;font-style:italic"></h3>
+<h3 id="welcome" style="color:green;font-style:italic" class="blsection"></h3>
 
+
+ 
 @code {
+
+
     public async void TriggerJsPrompt()
     {
         // showPrompt is implemented in wwwroot/exampleJsInterop.js
-        var name = await JSRuntime.InvokeAsync<string>
-    (
-    "exampleJsFunctions.showPrompt", "What's your name?");
-    // displayWelcome is implemented in wwwroot/exampleJsInterop.js
-    await JSRuntime.InvokeAsync<string>
-        (
-        "exampleJsFunctions.displayWelcome",
-        $"Hello {name}! Welcome to Blazor!");
-        }
+        var name = await JSRuntime.InvokeAsync<string>("exampleJsFunctions.showPrompt", "What's your name?");
+
+        // displayWelcome is implemented in wwwroot/exampleJsInterop.js
+        await JSRuntime.InvokeAsync<string>("exampleJsFunctions.displayWelcome",
+            $"Hello {name}! Welcome to Blazor!");
+    }
 }

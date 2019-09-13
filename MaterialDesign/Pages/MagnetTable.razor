@@ -30,22 +30,8 @@
         <td><img src="http://tadaatiedye.com@(context.ProdPicture)" height="30" width="30" /></td>
     </MatTableRow>
 </MatTable>
-@foreach (var item in magnets)
-{
-    //using (Html.BeginForm("AddToCart", "Cart", new { id = item.ProdId }, FormMethod.Post))
-    //{
-    <ul class="flexsingle">
-        <li>@item.ProdName</li>
-        <li>@item.ProdId</li>
-        <li><img src="@item.ProdPicture" alt="@item.ProdName" style="max-width: 75px; height: auto;" /></li>
 
-        <li>@item.ProdPrice</li>
-        <li>#Avail: @item.ProdQty</li>
-        <li><input type="submit" value="Add to cart" /></li>
-        @*@Html.ActionLink("Details", "Details", new { id = item.ProdId })*@
-    </ul>
-    @*}*@
-}
+
 
 @code {
     public Magnets[] magnets;

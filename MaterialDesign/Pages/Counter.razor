@@ -4,7 +4,7 @@
 <h1>Blazor Counter</h1>
 <img src="./img/BrandBlazor_nohalo_1000x.png" height="100px"/>
 <p>Current count: @currentCount</p>
-<p>Global count: @WeatherForecast.GlobalCount</p>
+<p>Global count: @GlobalData.GlobalCount</p>
 
 <MatButton Outlined="true" class="btn btn-primary" @onclick="IncrementCount">Click me</MatButton>
 <MatButton Outlined="true" class="btn btn-primary" @onclick="IncrementGlobalCount">Global</MatButton>
@@ -14,7 +14,7 @@
 
     void IncrementGlobalCount()
     {
-        WeatherForecast.GlobalCount++;
+        GlobalData.GlobalCount++;
     }
 
     void IncrementCount()

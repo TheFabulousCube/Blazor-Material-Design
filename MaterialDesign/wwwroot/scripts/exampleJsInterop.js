@@ -18,4 +18,8 @@
     },
 
 };
-const thing = window.addEventListener('button', e => console.log(e.detail.text()));
+const thing = window.addEventListener('dataevent', function () {
+    DotNet.invokeMethodAsync('MaterialDesign', 'UpdateGlobal', event.detail);
+    console.log(event);
+}, true);
+
